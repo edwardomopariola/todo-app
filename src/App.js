@@ -6,8 +6,7 @@ function App() {
     const [ user, setUser ] = useState([]);   // State to store user data 
     const [ profile, setProfile ] = useState([]);  // State to store profile data
 
-    const login = useGoogleLogin({
-        flow: "redirect",
+    const login = useGoogleLogin({  // Function to handle Google login
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.log("Login Failed:", error),
         scope: "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"

@@ -1,0 +1,16 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "userId": "user123@gmail.com",
+        "text": "Complete React module",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "userId": "user456@gmail.com",
+        "text": "Review JSON Server documentation",
+        "completed": true
+      }
+    ]
+  }
