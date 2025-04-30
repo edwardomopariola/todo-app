@@ -42,7 +42,7 @@ const CreateTodo = ({ isSignedIn}) => {  // Component to create a new todo
             <h2 className='todo-header'>Create Todo</h2> 
             <div className='todo-input'> 
                 <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder="Add a new todo" className='input-field'/> 
-                <button onClick={addTodo}>Add Todo</button>  
+                <button onClick={addTodo}className='add-button'>Add</button>  
             </div>
             <ul className='todo-list'>  
                 {todos.map((todo, index) => (  // Map through the list of todos and display them
@@ -50,7 +50,7 @@ const CreateTodo = ({ isSignedIn}) => {  // Component to create a new todo
                         {editIndex === index ? (  // Check if the todo is being edited
                             <>
                                 <input type="text" value={editTodos} onChange={(e) => setEditTodos(e.target.value)} className='edit-input'/> 
-                                <button onClick={saveEdit} className='save-edit'>Save</button>  {/* Save the edited todo */}
+                                <button onClick={saveEdit} className='save-button'>Save</button>  {/* Save the edited todo */}
                             </>
                         ) : ( 
                             <>

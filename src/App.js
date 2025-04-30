@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleLogin, googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import CreateTodo from "./components/CreateTodo";   
+import "./index.css";  // Importing CSS styles
 
 function App() {
     const [ user, setUser ] = useState([]);   // State to store user data 
