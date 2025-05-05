@@ -6,7 +6,7 @@ import "./index.css";  // Importing CSS styles
 
 function App() {
     const [ user, setUser ] = useState([]);   // State to store user data 
-    const [ profile, setProfile ] = useState([]);  // State to store profile data
+    const [ profile, setProfile ] = useState("");  // State to store user profile data
 
     const login = useGoogleLogin({  // Function to handle Google login
         onSuccess: (codeResponse) => {  // Callback function on successful login
@@ -18,8 +18,7 @@ function App() {
     // useEffect to fetch user profile data after successful login
     // It checks if the user has an access token, and if so, it fetches the user's profile data from Google API
     useEffect(() => {
-        if (user?.access_token) {
-            // console.log("Access Token:", user.access_token);
+        if (user?.access_token) {   // Check if the user has an access token
             axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
                 headers: {
                     Authorization: `Bearer ${user.access_token}`,
@@ -31,8 +30,8 @@ function App() {
                 })
                 .catch((err) => console.log(err));
         }
-        [ user ];
-    });
+
+    }, [ user ]);  // Dependency array to re-run the effect when user changes
 
     const logOut = () => {  // Function to log out the user
         googleLogout();  // Call the googleLogout function to log out the user
