@@ -5,12 +5,12 @@ import CreateTodo from "./components/CreateTodo";
 import "./index.css";  // Importing CSS styles
 
 function App() {
-    const [ user, setUser ] = useState([]);   // State to store user data 
-    const [ profile, setProfile ] = useState("");  // State to store user profile data
+    const [ user, setUser ] = useState(null);   // State to store user data
+    const [ profile, setProfile ] = useState(null);  // State to store user profile data
 
     const login = useGoogleLogin({  // Function to handle Google login
         onSuccess: (codeResponse) => {  // Callback function on successful login
-            setUser(codeResponse);
+            setUser(codeResponse);   // Set the user data in state 
         },  
         onError: (error) => console.log("Login Failed:", error),
     });
