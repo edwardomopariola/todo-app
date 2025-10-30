@@ -18,7 +18,7 @@ body {
     box-shadow: 0 4px 8px rgba(131, 15, 15, 0.1);
 }
 
-header {
+.header {
     font-size: 24px;
     color: white;
     margin-bottom: 20px;
@@ -51,7 +51,7 @@ header {
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     margin-top: 10px;
 }
